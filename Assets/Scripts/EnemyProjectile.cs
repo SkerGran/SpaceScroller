@@ -6,6 +6,10 @@ public class EnemyProjectile : MonoBehaviour
 {
     public float speed = 5f;
 
+    private void Awake()
+    {
+        Destroy(gameObject, 2f);
+    }
 
     // Update is called once per frame
     void Update()
