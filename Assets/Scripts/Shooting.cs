@@ -18,9 +18,12 @@ public class Shooting : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0) && canShot)
+        if (!PauseMenu.instance.isPaused)
         {
-            Shoot();
+            if (Input.GetMouseButtonDown(0) && canShot)
+            {
+                Shoot();
+            }
         }
     }
 

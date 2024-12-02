@@ -36,9 +36,12 @@ public class Enemy : MonoBehaviour
 
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        Destroy(collision.gameObject);
-        Destroy(gameObject);
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (collision.gameObject.tag == "Player")
+        {
+            PlayerHealth.instance.DealDamage();
+            Destroy(gameObject);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 
 }
