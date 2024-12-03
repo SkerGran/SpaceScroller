@@ -31,6 +31,7 @@ public class Shooting : MonoBehaviour
     {
         Instantiate(bullet, firePos.position, firePos.rotation);
         StartCoroutine(ShootDelay());
+        AudioManager.Instance.PlaySfx(3);
     }
 
     IEnumerator ShootDelay()

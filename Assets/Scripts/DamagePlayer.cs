@@ -21,6 +21,7 @@ public class DamagePlayer : MonoBehaviour
         if (collision.tag == "Player")
         {
             PlayerHealth.instance.DealDamage();
+            AudioManager.Instance.PlaySfx(2);
         }
     }
 }

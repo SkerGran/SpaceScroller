@@ -12,6 +12,7 @@ public class Pickups : MonoBehaviour
         if (collision.tag == "Gem")
         {
             Scoring.totalScore++;
+            AudioManager.Instance.PlaySfx(1);
             scoreText.text = "SCORE: " + Scoring.totalScore;
             Destroy(collision.gameObject);
         }

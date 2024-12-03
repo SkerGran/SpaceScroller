@@ -23,6 +23,7 @@ public class EnemyProjectile : MonoBehaviour
         {
             PlayerHealth.instance.DealDamage();
             Destroy(gameObject);
+            AudioManager.Instance.PlaySfx(2);
         }
     }
 

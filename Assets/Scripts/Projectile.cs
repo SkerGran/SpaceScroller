@@ -37,6 +37,7 @@ public class Projectile : MonoBehaviour
         {
             Destroy(collision.gameObject);
             Destroy(gameObject);
+            AudioManager.Instance.PlaySfx(0);
         }
     }
 
