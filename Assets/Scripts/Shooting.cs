@@ -9,10 +9,12 @@ public class Shooting : MonoBehaviour
     public float timeBetweenShots;
     private bool canShot = true;
 
+    public static Shooting instance;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        instance = this;
     }
 
     // Update is called once per frame

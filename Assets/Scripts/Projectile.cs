@@ -7,6 +7,7 @@ public class Projectile : MonoBehaviour
     public float bulletSpeed = 5;
     private Rigidbody2D rb;
 
+    public GameObject ExplosionEffect;
 
     private void Awake()
     {
@@ -38,6 +39,7 @@ public class Projectile : MonoBehaviour
             Destroy(collision.gameObject);
             Destroy(gameObject);
             AudioManager.Instance.PlaySfx(0);
+            Instantiate(ExplosionEffect, transform.position, Quaternion.identity);
         }
     }
 

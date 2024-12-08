@@ -12,6 +12,8 @@ public class PlayerHealth : MonoBehaviour
 
     public HealthBar healthBar;
 
+    public SpriteRenderer sr;
+
     private void Awake()
     {
         instance = this;
@@ -32,6 +34,7 @@ public class PlayerHealth : MonoBehaviour
     public void DealDamage()
     {
         currentHealth--;
+        StartCoroutine(BloodEffect());
         healthBar.SetHealth(currentHealth);
 
         if (currentHealth <= 0)
@@ -42,5 +45,12 @@ public class PlayerHealth : MonoBehaviour
     void Die()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    IEnumerator BloodEffect()
+    {
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.1f);
+        yield return new WaitForSeconds(0.5f);
+        sr.color = new Color(sr.color.r, sr.color.g, sr.color.b, 0.0f);
     }
 }

@@ -8,7 +8,11 @@ public class Pickups : MonoBehaviour
 {
     public TMP_Text scoreText;
 
-
+    private void Start()
+    {
+        Scoring.totalScore = 0;
+        scoreText.text = "SCORE: " + Scoring.totalScore;
+    }
     private void Update()
     {
         if (Scoring.totalScore >= 3)
